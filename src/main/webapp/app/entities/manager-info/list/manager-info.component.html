@@ -1,0 +1,116 @@
+<div>
+  <h2 id="page-heading" data-cy="ManagerInfoHeading">
+    <span jhiTranslate="disclosureApp.managerInfo.home.title">Manager Infos</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="disclosureApp.managerInfo.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-manager-info"
+        [routerLink]="['/manager-info/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="disclosureApp.managerInfo.home.createLabel">Create a new Manager Info</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (managerInfos().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="disclosureApp.managerInfo.home.notFound">No Manager Infos found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="emailDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.managerInfo.emailDirectManager">Email Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nameDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.managerInfo.nameDirectManager">Name Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="jobNumberDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.managerInfo.jobNumberDirectManager">Job Number Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="jobTitleDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.managerInfo.jobTitleDirectManager">Job Title Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="extDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.managerInfo.extDirectManager">Ext Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (managerInfo of managerInfos(); track trackId(managerInfo)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/manager-info', managerInfo.id, 'view']">{{ managerInfo.id }}</a>
+              </td>
+              <td>{{ managerInfo.emailDirectManager }}</td>
+              <td>{{ managerInfo.nameDirectManager }}</td>
+              <td>{{ managerInfo.jobNumberDirectManager }}</td>
+              <td>{{ managerInfo.jobTitleDirectManager }}</td>
+              <td>{{ managerInfo.extDirectManager }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/manager-info', managerInfo.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/manager-info', managerInfo.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(managerInfo)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

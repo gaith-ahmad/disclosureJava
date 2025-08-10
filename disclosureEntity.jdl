@@ -1,0 +1,119 @@
+
+application {
+  config {
+    baseName Disclosure
+    applicationType monolith
+    packageName com.gosi.disclosure
+    authenticationType jwt
+    prodDatabaseType mysql
+    clientFramework angularX
+  }
+  entities *
+}
+
+entity ConflictInterest {
+  conflictInterestClassification String ,
+  conflictInterestEntityIndividual String ,
+  conflictInterestDateArose String ,
+  conflictInterestImpact String,
+  relationshipEntityIndividual String ,
+  affectPermission String ,
+  caseDetails String ,
+  discloseInspector String ,
+  facilityRegisteredInsuranceName String ,
+  office String 
+}
+
+entity Disclosure {
+  purposeOfDisclosure String,
+  creationDate String,
+  name String,
+  jobTitle String,
+  jobNumber String,
+  ext String,
+  publicAdministration String,
+  administration String,
+  confirm String,
+  email String,
+  emailDirectManager String,
+  nameDirectManager String,
+  jobNumberDirectManager String,
+  jobTitleDirectManager String,
+  extDirectManager String,
+  areThereRelatives Boolean required,
+  file String,
+  filename String
+}
+
+
+entity Employee {
+  displayName String,
+  email String required,
+  title String,
+  telephoneNumber String,
+  localPhone String,
+  department String,
+  physicalDeliveryOfficeName String,
+  distinguishedName String,
+  username String
+}
+
+entity Gift {
+  giftNameOrganizationGiven String,
+  giftReason String,
+  giftOfficialOccasion String required,
+  giftSpoilsQuickly String required,
+  giftForPersonalUse String required,
+  giftType String required,
+  giftEstimatedValue String,
+  giftDateReceiving String required,
+  giftOwnDesire String required,
+  giftImpact String required,
+  giftReasonAcceptanceRejection String,
+  amountCashOffered String,
+  otherNotes String,
+  formalOccasionVisit String
+}
+entity ManagerInfo {
+  emailDirectManager String required,
+  nameDirectManager String required,
+  jobNumberDirectManager String required,
+  jobTitleDirectManager String required,
+  extDirectManager String required
+}
+entity Relatives {
+  nameDiscloser String required,
+  nameRelative String required,
+  jobTitleRelative String required,
+  relativeJobNumber String required,
+  emailRelative String required,
+  relativeExtensionNumber String required,
+  relativeRelationship String,
+  generalAdministrationRelative String required,
+  administrationRelative String required
+}
+
+ 
+entity UserInfo {
+  loginName String required,
+  fullName String required,
+  email String required,
+  key Long,
+  name String required,
+  jobTitle String required,
+  jobNumber String required,
+  ext String required,
+  publicAdministration String required,
+  administration String required,
+  relativeRelationship String,
+  office String
+}
+relationship OneToMany {
+  Disclosure{relatives} to Relatives
+}
+
+relationship OneToOne {
+  Disclosure{gift} to Gift,
+  Disclosure{conflictInterest} to ConflictInterest 
+  UserInfo{managerinfo} to ManagerInfo
+}

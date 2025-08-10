@@ -1,0 +1,253 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-disclosure-heading"
+        data-cy="DisclosureCreateUpdateHeading"
+        jhiTranslate="disclosureApp.disclosure.home.createOrEditLabel"
+      >
+        Create or edit a Disclosure
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="disclosureApp.disclosure.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_purposeOfDisclosure" jhiTranslate="disclosureApp.disclosure.purposeOfDisclosure"
+            >Purpose Of Disclosure</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="purposeOfDisclosure"
+            id="field_purposeOfDisclosure"
+            data-cy="purposeOfDisclosure"
+            formControlName="purposeOfDisclosure"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_creationDate" jhiTranslate="disclosureApp.disclosure.creationDate">Creation Date</label>
+          <input
+            type="text"
+            class="form-control"
+            name="creationDate"
+            id="field_creationDate"
+            data-cy="creationDate"
+            formControlName="creationDate"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="disclosureApp.disclosure.name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_jobTitle" jhiTranslate="disclosureApp.disclosure.jobTitle">Job Title</label>
+          <input type="text" class="form-control" name="jobTitle" id="field_jobTitle" data-cy="jobTitle" formControlName="jobTitle" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_jobNumber" jhiTranslate="disclosureApp.disclosure.jobNumber">Job Number</label>
+          <input type="text" class="form-control" name="jobNumber" id="field_jobNumber" data-cy="jobNumber" formControlName="jobNumber" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_ext" jhiTranslate="disclosureApp.disclosure.ext">Ext</label>
+          <input type="text" class="form-control" name="ext" id="field_ext" data-cy="ext" formControlName="ext" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_publicAdministration" jhiTranslate="disclosureApp.disclosure.publicAdministration"
+            >Public Administration</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="publicAdministration"
+            id="field_publicAdministration"
+            data-cy="publicAdministration"
+            formControlName="publicAdministration"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_administration" jhiTranslate="disclosureApp.disclosure.administration">Administration</label>
+          <input
+            type="text"
+            class="form-control"
+            name="administration"
+            id="field_administration"
+            data-cy="administration"
+            formControlName="administration"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_confirm" jhiTranslate="disclosureApp.disclosure.confirm">Confirm</label>
+          <input type="text" class="form-control" name="confirm" id="field_confirm" data-cy="confirm" formControlName="confirm" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_email" jhiTranslate="disclosureApp.disclosure.email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_emailDirectManager" jhiTranslate="disclosureApp.disclosure.emailDirectManager"
+            >Email Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="emailDirectManager"
+            id="field_emailDirectManager"
+            data-cy="emailDirectManager"
+            formControlName="emailDirectManager"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_nameDirectManager" jhiTranslate="disclosureApp.disclosure.nameDirectManager"
+            >Name Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="nameDirectManager"
+            id="field_nameDirectManager"
+            data-cy="nameDirectManager"
+            formControlName="nameDirectManager"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_jobNumberDirectManager" jhiTranslate="disclosureApp.disclosure.jobNumberDirectManager"
+            >Job Number Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="jobNumberDirectManager"
+            id="field_jobNumberDirectManager"
+            data-cy="jobNumberDirectManager"
+            formControlName="jobNumberDirectManager"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_jobTitleDirectManager" jhiTranslate="disclosureApp.disclosure.jobTitleDirectManager"
+            >Job Title Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="jobTitleDirectManager"
+            id="field_jobTitleDirectManager"
+            data-cy="jobTitleDirectManager"
+            formControlName="jobTitleDirectManager"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_extDirectManager" jhiTranslate="disclosureApp.disclosure.extDirectManager"
+            >Ext Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="extDirectManager"
+            id="field_extDirectManager"
+            data-cy="extDirectManager"
+            formControlName="extDirectManager"
+          />
+        </div>
+
+        @let areThereRelativesRef = editForm.get('areThereRelatives')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_areThereRelatives" jhiTranslate="disclosureApp.disclosure.areThereRelatives"
+            >Are There Relatives</label
+          >
+          <input
+            type="checkbox"
+            class="form-check"
+            name="areThereRelatives"
+            id="field_areThereRelatives"
+            data-cy="areThereRelatives"
+            formControlName="areThereRelatives"
+          />
+          @if (areThereRelativesRef.invalid && (areThereRelativesRef.dirty || areThereRelativesRef.touched)) {
+            <div>
+              @if (editForm.get('areThereRelatives')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_file" jhiTranslate="disclosureApp.disclosure.file">File</label>
+          <input type="text" class="form-control" name="file" id="field_file" data-cy="file" formControlName="file" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_filename" jhiTranslate="disclosureApp.disclosure.filename">Filename</label>
+          <input type="text" class="form-control" name="filename" id="field_filename" data-cy="filename" formControlName="filename" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_gift" jhiTranslate="disclosureApp.disclosure.gift">Gift</label>
+          <select class="form-control" id="field_gift" data-cy="gift" name="gift" formControlName="gift" [compareWith]="compareGift">
+            <option [ngValue]="null"></option>
+            @for (giftOption of giftsCollection; track $index) {
+              <option [ngValue]="giftOption">{{ giftOption.id }}</option>
+            }
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_conflictInterest" jhiTranslate="disclosureApp.disclosure.conflictInterest"
+            >Conflict Interest</label
+          >
+          <select
+            class="form-control"
+            id="field_conflictInterest"
+            data-cy="conflictInterest"
+            name="conflictInterest"
+            formControlName="conflictInterest"
+            [compareWith]="compareConflictInterest"
+          >
+            <option [ngValue]="null"></option>
+            @for (conflictInterestOption of conflictInterestsCollection; track $index) {
+              <option [ngValue]="conflictInterestOption">{{ conflictInterestOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

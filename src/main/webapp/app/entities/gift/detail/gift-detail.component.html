@@ -1,0 +1,86 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (gift(); as giftRef) {
+      <div>
+        <h2 data-cy="giftDetailsHeading"><span jhiTranslate="disclosureApp.gift.detail.title">Gift</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ giftRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftNameOrganizationGiven">Gift Name Organization Given</span></dt>
+          <dd>
+            <span>{{ giftRef.giftNameOrganizationGiven }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftReason">Gift Reason</span></dt>
+          <dd>
+            <span>{{ giftRef.giftReason }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftOfficialOccasion">Gift Official Occasion</span></dt>
+          <dd>
+            <span>{{ giftRef.giftOfficialOccasion }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftSpoilsQuickly">Gift Spoils Quickly</span></dt>
+          <dd>
+            <span>{{ giftRef.giftSpoilsQuickly }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftForPersonalUse">Gift For Personal Use</span></dt>
+          <dd>
+            <span>{{ giftRef.giftForPersonalUse }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftType">Gift Type</span></dt>
+          <dd>
+            <span>{{ giftRef.giftType }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftEstimatedValue">Gift Estimated Value</span></dt>
+          <dd>
+            <span>{{ giftRef.giftEstimatedValue }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftDateReceiving">Gift Date Receiving</span></dt>
+          <dd>
+            <span>{{ giftRef.giftDateReceiving }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftOwnDesire">Gift Own Desire</span></dt>
+          <dd>
+            <span>{{ giftRef.giftOwnDesire }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftImpact">Gift Impact</span></dt>
+          <dd>
+            <span>{{ giftRef.giftImpact }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.giftReasonAcceptanceRejection">Gift Reason Acceptance Rejection</span></dt>
+          <dd>
+            <span>{{ giftRef.giftReasonAcceptanceRejection }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.amountCashOffered">Amount Cash Offered</span></dt>
+          <dd>
+            <span>{{ giftRef.amountCashOffered }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.otherNotes">Other Notes</span></dt>
+          <dd>
+            <span>{{ giftRef.otherNotes }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.gift.formalOccasionVisit">Formal Occasion Visit</span></dt>
+          <dd>
+            <span>{{ giftRef.formalOccasionVisit }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/gift', giftRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

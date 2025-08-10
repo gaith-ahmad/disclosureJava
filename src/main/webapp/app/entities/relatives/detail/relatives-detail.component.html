@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (relatives(); as relativesRef) {
+      <div>
+        <h2 data-cy="relativesDetailsHeading"><span jhiTranslate="disclosureApp.relatives.detail.title">Relatives</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ relativesRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.nameDiscloser">Name Discloser</span></dt>
+          <dd>
+            <span>{{ relativesRef.nameDiscloser }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.nameRelative">Name Relative</span></dt>
+          <dd>
+            <span>{{ relativesRef.nameRelative }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.jobTitleRelative">Job Title Relative</span></dt>
+          <dd>
+            <span>{{ relativesRef.jobTitleRelative }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.relativeJobNumber">Relative Job Number</span></dt>
+          <dd>
+            <span>{{ relativesRef.relativeJobNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.emailRelative">Email Relative</span></dt>
+          <dd>
+            <span>{{ relativesRef.emailRelative }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.relativeExtensionNumber">Relative Extension Number</span></dt>
+          <dd>
+            <span>{{ relativesRef.relativeExtensionNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.relativeRelationship">Relative Relationship</span></dt>
+          <dd>
+            <span>{{ relativesRef.relativeRelationship }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.generalAdministrationRelative">General Administration Relative</span></dt>
+          <dd>
+            <span>{{ relativesRef.generalAdministrationRelative }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.administrationRelative">Administration Relative</span></dt>
+          <dd>
+            <span>{{ relativesRef.administrationRelative }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.relatives.disclosure">Disclosure</span></dt>
+          <dd>
+            @if (relatives()!.disclosure) {
+              <div>
+                <a [routerLink]="['/disclosure', relatives()!.disclosure?.id, 'view']">{{ relativesRef.disclosure?.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/relatives', relativesRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,51 @@
+{
+  "annotations": {
+    "changelogDate": "20250810134100"
+  },
+  "applications": ["Disclosure"],
+  "fields": [
+    {
+      "fieldName": "conflictInterestClassification",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conflictInterestEntityIndividual",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conflictInterestDateArose",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "conflictInterestImpact",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "relationshipEntityIndividual",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "affectPermission",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "caseDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "discloseInspector",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "facilityRegisteredInsuranceName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "office",
+      "fieldType": "String"
+    }
+  ],
+  "name": "ConflictInterest",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,161 @@
+<div>
+  <h2 id="page-heading" data-cy="RelativesHeading">
+    <span jhiTranslate="disclosureApp.relatives.home.title">Relatives</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="disclosureApp.relatives.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-relatives"
+        [routerLink]="['/relatives/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="disclosureApp.relatives.home.createLabel">Create a new Relatives</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (relatives().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="disclosureApp.relatives.home.notFound">No Relatives found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nameDiscloser">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.nameDiscloser">Name Discloser</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nameRelative">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.nameRelative">Name Relative</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="jobTitleRelative">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.jobTitleRelative">Job Title Relative</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="relativeJobNumber">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.relativeJobNumber">Relative Job Number</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="emailRelative">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.emailRelative">Email Relative</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="relativeExtensionNumber">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.relativeExtensionNumber">Relative Extension Number</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="relativeRelationship">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.relativeRelationship">Relative Relationship</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="generalAdministrationRelative">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.generalAdministrationRelative">General Administration Relative</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="administrationRelative">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.administrationRelative">Administration Relative</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="disclosure.id">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.relatives.disclosure">Disclosure</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (relatives of relatives(); track trackId(relatives)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/relatives', relatives.id, 'view']">{{ relatives.id }}</a>
+              </td>
+              <td>{{ relatives.nameDiscloser }}</td>
+              <td>{{ relatives.nameRelative }}</td>
+              <td>{{ relatives.jobTitleRelative }}</td>
+              <td>{{ relatives.relativeJobNumber }}</td>
+              <td>{{ relatives.emailRelative }}</td>
+              <td>{{ relatives.relativeExtensionNumber }}</td>
+              <td>{{ relatives.relativeRelationship }}</td>
+              <td>{{ relatives.generalAdministrationRelative }}</td>
+              <td>{{ relatives.administrationRelative }}</td>
+              <td>
+                @if (relatives.disclosure) {
+                  <div>
+                    <a [routerLink]="['/disclosure', relatives.disclosure.id, 'view']">{{ relatives.disclosure.id }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/relatives', relatives.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/relatives', relatives.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(relatives)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

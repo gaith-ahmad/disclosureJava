@@ -1,0 +1,184 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-conflict-interest-heading"
+        data-cy="ConflictInterestCreateUpdateHeading"
+        jhiTranslate="disclosureApp.conflictInterest.home.createOrEditLabel"
+      >
+        Create or edit a Conflict Interest
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="disclosureApp.conflictInterest.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_conflictInterestClassification"
+            jhiTranslate="disclosureApp.conflictInterest.conflictInterestClassification"
+            >Conflict Interest Classification</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="conflictInterestClassification"
+            id="field_conflictInterestClassification"
+            data-cy="conflictInterestClassification"
+            formControlName="conflictInterestClassification"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_conflictInterestEntityIndividual"
+            jhiTranslate="disclosureApp.conflictInterest.conflictInterestEntityIndividual"
+            >Conflict Interest Entity Individual</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="conflictInterestEntityIndividual"
+            id="field_conflictInterestEntityIndividual"
+            data-cy="conflictInterestEntityIndividual"
+            formControlName="conflictInterestEntityIndividual"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_conflictInterestDateArose"
+            jhiTranslate="disclosureApp.conflictInterest.conflictInterestDateArose"
+            >Conflict Interest Date Arose</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="conflictInterestDateArose"
+            id="field_conflictInterestDateArose"
+            data-cy="conflictInterestDateArose"
+            formControlName="conflictInterestDateArose"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_conflictInterestImpact" jhiTranslate="disclosureApp.conflictInterest.conflictInterestImpact"
+            >Conflict Interest Impact</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="conflictInterestImpact"
+            id="field_conflictInterestImpact"
+            data-cy="conflictInterestImpact"
+            formControlName="conflictInterestImpact"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_relationshipEntityIndividual"
+            jhiTranslate="disclosureApp.conflictInterest.relationshipEntityIndividual"
+            >Relationship Entity Individual</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="relationshipEntityIndividual"
+            id="field_relationshipEntityIndividual"
+            data-cy="relationshipEntityIndividual"
+            formControlName="relationshipEntityIndividual"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_affectPermission" jhiTranslate="disclosureApp.conflictInterest.affectPermission"
+            >Affect Permission</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="affectPermission"
+            id="field_affectPermission"
+            data-cy="affectPermission"
+            formControlName="affectPermission"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_caseDetails" jhiTranslate="disclosureApp.conflictInterest.caseDetails">Case Details</label>
+          <input
+            type="text"
+            class="form-control"
+            name="caseDetails"
+            id="field_caseDetails"
+            data-cy="caseDetails"
+            formControlName="caseDetails"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_discloseInspector" jhiTranslate="disclosureApp.conflictInterest.discloseInspector"
+            >Disclose Inspector</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="discloseInspector"
+            id="field_discloseInspector"
+            data-cy="discloseInspector"
+            formControlName="discloseInspector"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_facilityRegisteredInsuranceName"
+            jhiTranslate="disclosureApp.conflictInterest.facilityRegisteredInsuranceName"
+            >Facility Registered Insurance Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="facilityRegisteredInsuranceName"
+            id="field_facilityRegisteredInsuranceName"
+            data-cy="facilityRegisteredInsuranceName"
+            formControlName="facilityRegisteredInsuranceName"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_office" jhiTranslate="disclosureApp.conflictInterest.office">Office</label>
+          <input type="text" class="form-control" name="office" id="field_office" data-cy="office" formControlName="office" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

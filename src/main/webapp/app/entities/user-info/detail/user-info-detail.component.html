@@ -1,0 +1,86 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (userInfo(); as userInfoRef) {
+      <div>
+        <h2 data-cy="userInfoDetailsHeading"><span jhiTranslate="disclosureApp.userInfo.detail.title">User Info</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ userInfoRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.loginName">Login Name</span></dt>
+          <dd>
+            <span>{{ userInfoRef.loginName }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.fullName">Full Name</span></dt>
+          <dd>
+            <span>{{ userInfoRef.fullName }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.email">Email</span></dt>
+          <dd>
+            <span>{{ userInfoRef.email }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.key">Key</span></dt>
+          <dd>
+            <span>{{ userInfoRef.key }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.name">Name</span></dt>
+          <dd>
+            <span>{{ userInfoRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.jobTitle">Job Title</span></dt>
+          <dd>
+            <span>{{ userInfoRef.jobTitle }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.jobNumber">Job Number</span></dt>
+          <dd>
+            <span>{{ userInfoRef.jobNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.ext">Ext</span></dt>
+          <dd>
+            <span>{{ userInfoRef.ext }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.publicAdministration">Public Administration</span></dt>
+          <dd>
+            <span>{{ userInfoRef.publicAdministration }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.administration">Administration</span></dt>
+          <dd>
+            <span>{{ userInfoRef.administration }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.relativeRelationship">Relative Relationship</span></dt>
+          <dd>
+            <span>{{ userInfoRef.relativeRelationship }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.office">Office</span></dt>
+          <dd>
+            <span>{{ userInfoRef.office }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.userInfo.managerinfo">Managerinfo</span></dt>
+          <dd>
+            @if (userInfo()!.managerinfo) {
+              <div>
+                <a [routerLink]="['/manager-info', userInfo()!.managerinfo?.id, 'view']">{{ userInfoRef.managerinfo?.id }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/user-info', userInfoRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

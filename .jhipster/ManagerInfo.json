@@ -1,0 +1,36 @@
+{
+  "annotations": {
+    "changelogDate": "20250810134500"
+  },
+  "applications": ["Disclosure"],
+  "fields": [
+    {
+      "fieldName": "emailDirectManager",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nameDirectManager",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "jobNumberDirectManager",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "jobTitleDirectManager",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "extDirectManager",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "ManagerInfo",
+  "relationships": [],
+  "searchEngine": "no"
+}

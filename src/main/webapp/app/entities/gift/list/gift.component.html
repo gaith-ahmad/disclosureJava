@@ -1,0 +1,188 @@
+<div>
+  <h2 id="page-heading" data-cy="GiftHeading">
+    <span jhiTranslate="disclosureApp.gift.home.title">Gifts</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="disclosureApp.gift.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-gift"
+        [routerLink]="['/gift/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="disclosureApp.gift.home.createLabel">Create a new Gift</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (gifts().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="disclosureApp.gift.home.notFound">No Gifts found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftNameOrganizationGiven">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftNameOrganizationGiven">Gift Name Organization Given</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftReason">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftReason">Gift Reason</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftOfficialOccasion">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftOfficialOccasion">Gift Official Occasion</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftSpoilsQuickly">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftSpoilsQuickly">Gift Spoils Quickly</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftForPersonalUse">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftForPersonalUse">Gift For Personal Use</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftType">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftType">Gift Type</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftEstimatedValue">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftEstimatedValue">Gift Estimated Value</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftDateReceiving">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftDateReceiving">Gift Date Receiving</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftOwnDesire">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftOwnDesire">Gift Own Desire</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftImpact">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftImpact">Gift Impact</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="giftReasonAcceptanceRejection">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.giftReasonAcceptanceRejection">Gift Reason Acceptance Rejection</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="amountCashOffered">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.amountCashOffered">Amount Cash Offered</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="otherNotes">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.otherNotes">Other Notes</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="formalOccasionVisit">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.gift.formalOccasionVisit">Formal Occasion Visit</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (gift of gifts(); track trackId(gift)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/gift', gift.id, 'view']">{{ gift.id }}</a>
+              </td>
+              <td>{{ gift.giftNameOrganizationGiven }}</td>
+              <td>{{ gift.giftReason }}</td>
+              <td>{{ gift.giftOfficialOccasion }}</td>
+              <td>{{ gift.giftSpoilsQuickly }}</td>
+              <td>{{ gift.giftForPersonalUse }}</td>
+              <td>{{ gift.giftType }}</td>
+              <td>{{ gift.giftEstimatedValue }}</td>
+              <td>{{ gift.giftDateReceiving }}</td>
+              <td>{{ gift.giftOwnDesire }}</td>
+              <td>{{ gift.giftImpact }}</td>
+              <td>{{ gift.giftReasonAcceptanceRejection }}</td>
+              <td>{{ gift.amountCashOffered }}</td>
+              <td>{{ gift.otherNotes }}</td>
+              <td>{{ gift.formalOccasionVisit }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/gift', gift.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/gift', gift.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(gift)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

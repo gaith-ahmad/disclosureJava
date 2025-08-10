@@ -1,0 +1,78 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (conflictInterest(); as conflictInterestRef) {
+      <div>
+        <h2 data-cy="conflictInterestDetailsHeading">
+          <span jhiTranslate="disclosureApp.conflictInterest.detail.title">Conflict Interest</span>
+        </h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ conflictInterestRef.id }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="disclosureApp.conflictInterest.conflictInterestClassification">Conflict Interest Classification</span>
+          </dt>
+          <dd>
+            <span>{{ conflictInterestRef.conflictInterestClassification }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="disclosureApp.conflictInterest.conflictInterestEntityIndividual">Conflict Interest Entity Individual</span>
+          </dt>
+          <dd>
+            <span>{{ conflictInterestRef.conflictInterestEntityIndividual }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.conflictInterest.conflictInterestDateArose">Conflict Interest Date Arose</span></dt>
+          <dd>
+            <span>{{ conflictInterestRef.conflictInterestDateArose }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.conflictInterest.conflictInterestImpact">Conflict Interest Impact</span></dt>
+          <dd>
+            <span>{{ conflictInterestRef.conflictInterestImpact }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.conflictInterest.relationshipEntityIndividual">Relationship Entity Individual</span></dt>
+          <dd>
+            <span>{{ conflictInterestRef.relationshipEntityIndividual }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.conflictInterest.affectPermission">Affect Permission</span></dt>
+          <dd>
+            <span>{{ conflictInterestRef.affectPermission }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.conflictInterest.caseDetails">Case Details</span></dt>
+          <dd>
+            <span>{{ conflictInterestRef.caseDetails }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.conflictInterest.discloseInspector">Disclose Inspector</span></dt>
+          <dd>
+            <span>{{ conflictInterestRef.discloseInspector }}</span>
+          </dd>
+          <dt>
+            <span jhiTranslate="disclosureApp.conflictInterest.facilityRegisteredInsuranceName">Facility Registered Insurance Name</span>
+          </dt>
+          <dd>
+            <span>{{ conflictInterestRef.facilityRegisteredInsuranceName }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.conflictInterest.office">Office</span></dt>
+          <dd>
+            <span>{{ conflictInterestRef.office }}</span>
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/conflict-interest', conflictInterestRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,55 @@
+{
+  "annotations": {
+    "changelogDate": "20250810134600"
+  },
+  "applications": ["Disclosure"],
+  "fields": [
+    {
+      "fieldName": "nameDiscloser",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "nameRelative",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "jobTitleRelative",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "relativeJobNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "emailRelative",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "relativeExtensionNumber",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "relativeRelationship",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "generalAdministrationRelative",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "administrationRelative",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Relatives",
+  "relationships": [],
+  "searchEngine": "no"
+}

@@ -1,0 +1,274 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-gift-heading" data-cy="GiftCreateUpdateHeading" jhiTranslate="disclosureApp.gift.home.createOrEditLabel">
+        Create or edit a Gift
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="disclosureApp.gift.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        <div class="mb-3">
+          <label class="form-label" for="field_giftNameOrganizationGiven" jhiTranslate="disclosureApp.gift.giftNameOrganizationGiven"
+            >Gift Name Organization Given</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="giftNameOrganizationGiven"
+            id="field_giftNameOrganizationGiven"
+            data-cy="giftNameOrganizationGiven"
+            formControlName="giftNameOrganizationGiven"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_giftReason" jhiTranslate="disclosureApp.gift.giftReason">Gift Reason</label>
+          <input
+            type="text"
+            class="form-control"
+            name="giftReason"
+            id="field_giftReason"
+            data-cy="giftReason"
+            formControlName="giftReason"
+          />
+        </div>
+
+        @let giftOfficialOccasionRef = editForm.get('giftOfficialOccasion')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_giftOfficialOccasion" jhiTranslate="disclosureApp.gift.giftOfficialOccasion"
+            >Gift Official Occasion</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="giftOfficialOccasion"
+            id="field_giftOfficialOccasion"
+            data-cy="giftOfficialOccasion"
+            formControlName="giftOfficialOccasion"
+          />
+          @if (giftOfficialOccasionRef.invalid && (giftOfficialOccasionRef.dirty || giftOfficialOccasionRef.touched)) {
+            <div>
+              @if (editForm.get('giftOfficialOccasion')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let giftSpoilsQuicklyRef = editForm.get('giftSpoilsQuickly')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_giftSpoilsQuickly" jhiTranslate="disclosureApp.gift.giftSpoilsQuickly"
+            >Gift Spoils Quickly</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="giftSpoilsQuickly"
+            id="field_giftSpoilsQuickly"
+            data-cy="giftSpoilsQuickly"
+            formControlName="giftSpoilsQuickly"
+          />
+          @if (giftSpoilsQuicklyRef.invalid && (giftSpoilsQuicklyRef.dirty || giftSpoilsQuicklyRef.touched)) {
+            <div>
+              @if (editForm.get('giftSpoilsQuickly')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let giftForPersonalUseRef = editForm.get('giftForPersonalUse')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_giftForPersonalUse" jhiTranslate="disclosureApp.gift.giftForPersonalUse"
+            >Gift For Personal Use</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="giftForPersonalUse"
+            id="field_giftForPersonalUse"
+            data-cy="giftForPersonalUse"
+            formControlName="giftForPersonalUse"
+          />
+          @if (giftForPersonalUseRef.invalid && (giftForPersonalUseRef.dirty || giftForPersonalUseRef.touched)) {
+            <div>
+              @if (editForm.get('giftForPersonalUse')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let giftTypeRef = editForm.get('giftType')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_giftType" jhiTranslate="disclosureApp.gift.giftType">Gift Type</label>
+          <input type="text" class="form-control" name="giftType" id="field_giftType" data-cy="giftType" formControlName="giftType" />
+          @if (giftTypeRef.invalid && (giftTypeRef.dirty || giftTypeRef.touched)) {
+            <div>
+              @if (editForm.get('giftType')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_giftEstimatedValue" jhiTranslate="disclosureApp.gift.giftEstimatedValue"
+            >Gift Estimated Value</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="giftEstimatedValue"
+            id="field_giftEstimatedValue"
+            data-cy="giftEstimatedValue"
+            formControlName="giftEstimatedValue"
+          />
+        </div>
+
+        @let giftDateReceivingRef = editForm.get('giftDateReceiving')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_giftDateReceiving" jhiTranslate="disclosureApp.gift.giftDateReceiving"
+            >Gift Date Receiving</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="giftDateReceiving"
+            id="field_giftDateReceiving"
+            data-cy="giftDateReceiving"
+            formControlName="giftDateReceiving"
+          />
+          @if (giftDateReceivingRef.invalid && (giftDateReceivingRef.dirty || giftDateReceivingRef.touched)) {
+            <div>
+              @if (editForm.get('giftDateReceiving')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let giftOwnDesireRef = editForm.get('giftOwnDesire')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_giftOwnDesire" jhiTranslate="disclosureApp.gift.giftOwnDesire">Gift Own Desire</label>
+          <input
+            type="text"
+            class="form-control"
+            name="giftOwnDesire"
+            id="field_giftOwnDesire"
+            data-cy="giftOwnDesire"
+            formControlName="giftOwnDesire"
+          />
+          @if (giftOwnDesireRef.invalid && (giftOwnDesireRef.dirty || giftOwnDesireRef.touched)) {
+            <div>
+              @if (editForm.get('giftOwnDesire')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let giftImpactRef = editForm.get('giftImpact')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_giftImpact" jhiTranslate="disclosureApp.gift.giftImpact">Gift Impact</label>
+          <input
+            type="text"
+            class="form-control"
+            name="giftImpact"
+            id="field_giftImpact"
+            data-cy="giftImpact"
+            formControlName="giftImpact"
+          />
+          @if (giftImpactRef.invalid && (giftImpactRef.dirty || giftImpactRef.touched)) {
+            <div>
+              @if (editForm.get('giftImpact')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            for="field_giftReasonAcceptanceRejection"
+            jhiTranslate="disclosureApp.gift.giftReasonAcceptanceRejection"
+            >Gift Reason Acceptance Rejection</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="giftReasonAcceptanceRejection"
+            id="field_giftReasonAcceptanceRejection"
+            data-cy="giftReasonAcceptanceRejection"
+            formControlName="giftReasonAcceptanceRejection"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_amountCashOffered" jhiTranslate="disclosureApp.gift.amountCashOffered"
+            >Amount Cash Offered</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="amountCashOffered"
+            id="field_amountCashOffered"
+            data-cy="amountCashOffered"
+            formControlName="amountCashOffered"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_otherNotes" jhiTranslate="disclosureApp.gift.otherNotes">Other Notes</label>
+          <input
+            type="text"
+            class="form-control"
+            name="otherNotes"
+            id="field_otherNotes"
+            data-cy="otherNotes"
+            formControlName="otherNotes"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_formalOccasionVisit" jhiTranslate="disclosureApp.gift.formalOccasionVisit"
+            >Formal Occasion Visit</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="formalOccasionVisit"
+            id="field_formalOccasionVisit"
+            data-cy="formalOccasionVisit"
+            formControlName="formalOccasionVisit"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

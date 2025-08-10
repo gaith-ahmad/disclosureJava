@@ -1,0 +1,210 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-user-info-heading" data-cy="UserInfoCreateUpdateHeading" jhiTranslate="disclosureApp.userInfo.home.createOrEditLabel">
+        Create or edit a User Info
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="disclosureApp.userInfo.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        @let loginNameRef = editForm.get('loginName')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_loginName" jhiTranslate="disclosureApp.userInfo.loginName">Login Name</label>
+          <input type="text" class="form-control" name="loginName" id="field_loginName" data-cy="loginName" formControlName="loginName" />
+          @if (loginNameRef.invalid && (loginNameRef.dirty || loginNameRef.touched)) {
+            <div>
+              @if (editForm.get('loginName')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let fullNameRef = editForm.get('fullName')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_fullName" jhiTranslate="disclosureApp.userInfo.fullName">Full Name</label>
+          <input type="text" class="form-control" name="fullName" id="field_fullName" data-cy="fullName" formControlName="fullName" />
+          @if (fullNameRef.invalid && (fullNameRef.dirty || fullNameRef.touched)) {
+            <div>
+              @if (editForm.get('fullName')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let emailRef = editForm.get('email')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_email" jhiTranslate="disclosureApp.userInfo.email">Email</label>
+          <input type="text" class="form-control" name="email" id="field_email" data-cy="email" formControlName="email" />
+          @if (emailRef.invalid && (emailRef.dirty || emailRef.touched)) {
+            <div>
+              @if (editForm.get('email')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_key" jhiTranslate="disclosureApp.userInfo.key">Key</label>
+          <input type="number" class="form-control" name="key" id="field_key" data-cy="key" formControlName="key" />
+        </div>
+
+        @let nameRef = editForm.get('name')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_name" jhiTranslate="disclosureApp.userInfo.name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          @if (nameRef.invalid && (nameRef.dirty || nameRef.touched)) {
+            <div>
+              @if (editForm.get('name')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let jobTitleRef = editForm.get('jobTitle')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_jobTitle" jhiTranslate="disclosureApp.userInfo.jobTitle">Job Title</label>
+          <input type="text" class="form-control" name="jobTitle" id="field_jobTitle" data-cy="jobTitle" formControlName="jobTitle" />
+          @if (jobTitleRef.invalid && (jobTitleRef.dirty || jobTitleRef.touched)) {
+            <div>
+              @if (editForm.get('jobTitle')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let jobNumberRef = editForm.get('jobNumber')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_jobNumber" jhiTranslate="disclosureApp.userInfo.jobNumber">Job Number</label>
+          <input type="text" class="form-control" name="jobNumber" id="field_jobNumber" data-cy="jobNumber" formControlName="jobNumber" />
+          @if (jobNumberRef.invalid && (jobNumberRef.dirty || jobNumberRef.touched)) {
+            <div>
+              @if (editForm.get('jobNumber')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let extRef = editForm.get('ext')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_ext" jhiTranslate="disclosureApp.userInfo.ext">Ext</label>
+          <input type="text" class="form-control" name="ext" id="field_ext" data-cy="ext" formControlName="ext" />
+          @if (extRef.invalid && (extRef.dirty || extRef.touched)) {
+            <div>
+              @if (editForm.get('ext')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let publicAdministrationRef = editForm.get('publicAdministration')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_publicAdministration" jhiTranslate="disclosureApp.userInfo.publicAdministration"
+            >Public Administration</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="publicAdministration"
+            id="field_publicAdministration"
+            data-cy="publicAdministration"
+            formControlName="publicAdministration"
+          />
+          @if (publicAdministrationRef.invalid && (publicAdministrationRef.dirty || publicAdministrationRef.touched)) {
+            <div>
+              @if (editForm.get('publicAdministration')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let administrationRef = editForm.get('administration')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_administration" jhiTranslate="disclosureApp.userInfo.administration">Administration</label>
+          <input
+            type="text"
+            class="form-control"
+            name="administration"
+            id="field_administration"
+            data-cy="administration"
+            formControlName="administration"
+          />
+          @if (administrationRef.invalid && (administrationRef.dirty || administrationRef.touched)) {
+            <div>
+              @if (editForm.get('administration')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_relativeRelationship" jhiTranslate="disclosureApp.userInfo.relativeRelationship"
+            >Relative Relationship</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="relativeRelationship"
+            id="field_relativeRelationship"
+            data-cy="relativeRelationship"
+            formControlName="relativeRelationship"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_office" jhiTranslate="disclosureApp.userInfo.office">Office</label>
+          <input type="text" class="form-control" name="office" id="field_office" data-cy="office" formControlName="office" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="field_managerinfo" jhiTranslate="disclosureApp.userInfo.managerinfo">Managerinfo</label>
+          <select
+            class="form-control"
+            id="field_managerinfo"
+            data-cy="managerinfo"
+            name="managerinfo"
+            formControlName="managerinfo"
+            [compareWith]="compareManagerInfo"
+          >
+            <option [ngValue]="null"></option>
+            @for (managerInfoOption of managerinfosCollection; track $index) {
+              <option [ngValue]="managerInfoOption">{{ managerInfoOption.id }}</option>
+            }
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,103 @@
+{
+  "annotations": {
+    "changelogDate": "20250810134200"
+  },
+  "applications": ["Disclosure"],
+  "fields": [
+    {
+      "fieldName": "purposeOfDisclosure",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "creationDate",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ext",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "publicAdministration",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "administration",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "confirm",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailDirectManager",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nameDirectManager",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobNumberDirectManager",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobTitleDirectManager",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "extDirectManager",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "areThereRelatives",
+      "fieldType": "Boolean",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "file",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "filename",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Disclosure",
+  "relationships": [
+    {
+      "otherEntityName": "gift",
+      "relationshipName": "gift",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "conflictInterest",
+      "relationshipName": "conflictInterest",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "relatives",
+      "relationshipName": "relatives",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

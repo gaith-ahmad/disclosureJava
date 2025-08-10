@@ -1,0 +1,44 @@
+{
+  "disclosureApp": {
+    "disclosure": {
+      "home": {
+        "title": "Disclosures",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Disclosure",
+        "createOrEditLabel": "Create or edit a Disclosure",
+        "notFound": "No Disclosures found"
+      },
+      "created": "A new Disclosure is created with identifier {{ param }}",
+      "updated": "A Disclosure is updated with identifier {{ param }}",
+      "deleted": "A Disclosure is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Disclosure {{ id }}?"
+      },
+      "detail": {
+        "title": "Disclosure"
+      },
+      "id": "ID",
+      "purposeOfDisclosure": "Purpose Of Disclosure",
+      "creationDate": "Creation Date",
+      "name": "Name",
+      "jobTitle": "Job Title",
+      "jobNumber": "Job Number",
+      "ext": "Ext",
+      "publicAdministration": "Public Administration",
+      "administration": "Administration",
+      "confirm": "Confirm",
+      "email": "Email",
+      "emailDirectManager": "Email Direct Manager",
+      "nameDirectManager": "Name Direct Manager",
+      "jobNumberDirectManager": "Job Number Direct Manager",
+      "jobTitleDirectManager": "Job Title Direct Manager",
+      "extDirectManager": "Ext Direct Manager",
+      "areThereRelatives": "Are There Relatives",
+      "file": "File",
+      "filename": "Filename",
+      "gift": "Gift",
+      "conflictInterest": "Conflict Interest",
+      "relatives": "Relatives"
+    }
+  }
+}

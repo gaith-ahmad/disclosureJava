@@ -1,0 +1,33 @@
+{
+  "disclosureApp": {
+    "relatives": {
+      "home": {
+        "title": "Relatives",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Relatives",
+        "createOrEditLabel": "Create or edit a Relatives",
+        "notFound": "No Relatives found"
+      },
+      "created": "A new Relatives is created with identifier {{ param }}",
+      "updated": "A Relatives is updated with identifier {{ param }}",
+      "deleted": "A Relatives is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Relatives {{ id }}?"
+      },
+      "detail": {
+        "title": "Relatives"
+      },
+      "id": "ID",
+      "nameDiscloser": "Name Discloser",
+      "nameRelative": "Name Relative",
+      "jobTitleRelative": "Job Title Relative",
+      "relativeJobNumber": "Relative Job Number",
+      "emailRelative": "Email Relative",
+      "relativeExtensionNumber": "Relative Extension Number",
+      "relativeRelationship": "Relative Relationship",
+      "generalAdministrationRelative": "General Administration Relative",
+      "administrationRelative": "Administration Relative",
+      "disclosure": "Disclosure"
+    }
+  }
+}

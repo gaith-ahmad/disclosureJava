@@ -1,0 +1,16 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "Disclosure",
+    "clientFramework": "angular",
+    "entities": ["ConflictInterest", "Disclosure", "Employee", "Gift", "ManagerInfo", "Relatives", "UserInfo"],
+    "jhipsterVersion": "8.11.0",
+    "jwtSecretKey": "N2Q3MjNjNDNiZjgzNzI0ZDIwYTk2MDhhMzlhMmM5ZjA3NTM5NWVmNmYwYzdiMWI2Y2YzNDJiYmNhMmI3ZDE0NTE1YjRhNDc5YzQ3NzY5MjI3YjgyNjk1NjZmNjQ3N2FkZDQ4MDcwODZmNjYxZTYyMWYzOGQ0MzU1NDE3MmE4ZDY=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1754833620000,
+    "nativeLanguage": "en",
+    "packageName": "com.gosi.disclosure",
+    "prodDatabaseType": "mysql"
+  }
+}

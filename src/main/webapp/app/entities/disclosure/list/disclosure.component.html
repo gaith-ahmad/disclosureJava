@@ -1,0 +1,248 @@
+<div>
+  <h2 id="page-heading" data-cy="DisclosureHeading">
+    <span jhiTranslate="disclosureApp.disclosure.home.title">Disclosures</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="disclosureApp.disclosure.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-disclosure"
+        [routerLink]="['/disclosure/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="disclosureApp.disclosure.home.createLabel">Create a new Disclosure</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (disclosures().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="disclosureApp.disclosure.home.notFound">No Disclosures found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="purposeOfDisclosure">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.purposeOfDisclosure">Purpose Of Disclosure</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="creationDate">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.creationDate">Creation Date</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="name">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.name">Name</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="jobTitle">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.jobTitle">Job Title</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="jobNumber">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.jobNumber">Job Number</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="ext">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.ext">Ext</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="publicAdministration">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.publicAdministration">Public Administration</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="administration">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.administration">Administration</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="confirm">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.confirm">Confirm</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="email">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.email">Email</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="emailDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.emailDirectManager">Email Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="nameDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.nameDirectManager">Name Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="jobNumberDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.jobNumberDirectManager">Job Number Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="jobTitleDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.jobTitleDirectManager">Job Title Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="extDirectManager">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.extDirectManager">Ext Direct Manager</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="areThereRelatives">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.areThereRelatives">Are There Relatives</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="file">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.file">File</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="filename">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.filename">Filename</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="gift.id">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.gift">Gift</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="conflictInterest.id">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.disclosure.conflictInterest">Conflict Interest</span>
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (disclosure of disclosures(); track trackId(disclosure)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/disclosure', disclosure.id, 'view']">{{ disclosure.id }}</a>
+              </td>
+              <td>{{ disclosure.purposeOfDisclosure }}</td>
+              <td>{{ disclosure.creationDate }}</td>
+              <td>{{ disclosure.name }}</td>
+              <td>{{ disclosure.jobTitle }}</td>
+              <td>{{ disclosure.jobNumber }}</td>
+              <td>{{ disclosure.ext }}</td>
+              <td>{{ disclosure.publicAdministration }}</td>
+              <td>{{ disclosure.administration }}</td>
+              <td>{{ disclosure.confirm }}</td>
+              <td>{{ disclosure.email }}</td>
+              <td>{{ disclosure.emailDirectManager }}</td>
+              <td>{{ disclosure.nameDirectManager }}</td>
+              <td>{{ disclosure.jobNumberDirectManager }}</td>
+              <td>{{ disclosure.jobTitleDirectManager }}</td>
+              <td>{{ disclosure.extDirectManager }}</td>
+              <td>{{ disclosure.areThereRelatives }}</td>
+              <td>{{ disclosure.file }}</td>
+              <td>{{ disclosure.filename }}</td>
+              <td>
+                @if (disclosure.gift) {
+                  <div>
+                    <a [routerLink]="['/gift', disclosure.gift.id, 'view']">{{ disclosure.gift.id }}</a>
+                  </div>
+                }
+              </td>
+              <td>
+                @if (disclosure.conflictInterest) {
+                  <div>
+                    <a [routerLink]="['/conflict-interest', disclosure.conflictInterest.id, 'view']">{{
+                      disclosure.conflictInterest.id
+                    }}</a>
+                  </div>
+                }
+              </td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a [routerLink]="['/disclosure', disclosure.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a [routerLink]="['/disclosure', disclosure.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(disclosure)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

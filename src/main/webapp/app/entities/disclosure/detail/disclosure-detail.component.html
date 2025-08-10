@@ -1,0 +1,120 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    @if (disclosure(); as disclosureRef) {
+      <div>
+        <h2 data-cy="disclosureDetailsHeading"><span jhiTranslate="disclosureApp.disclosure.detail.title">Disclosure</span></h2>
+
+        <hr />
+
+        <jhi-alert-error />
+
+        <jhi-alert />
+
+        <dl class="row-md jh-entity-details">
+          <dt><span jhiTranslate="global.field.id">ID</span></dt>
+          <dd>
+            <span>{{ disclosureRef.id }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.purposeOfDisclosure">Purpose Of Disclosure</span></dt>
+          <dd>
+            <span>{{ disclosureRef.purposeOfDisclosure }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.creationDate">Creation Date</span></dt>
+          <dd>
+            <span>{{ disclosureRef.creationDate }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.name">Name</span></dt>
+          <dd>
+            <span>{{ disclosureRef.name }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.jobTitle">Job Title</span></dt>
+          <dd>
+            <span>{{ disclosureRef.jobTitle }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.jobNumber">Job Number</span></dt>
+          <dd>
+            <span>{{ disclosureRef.jobNumber }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.ext">Ext</span></dt>
+          <dd>
+            <span>{{ disclosureRef.ext }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.publicAdministration">Public Administration</span></dt>
+          <dd>
+            <span>{{ disclosureRef.publicAdministration }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.administration">Administration</span></dt>
+          <dd>
+            <span>{{ disclosureRef.administration }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.confirm">Confirm</span></dt>
+          <dd>
+            <span>{{ disclosureRef.confirm }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.email">Email</span></dt>
+          <dd>
+            <span>{{ disclosureRef.email }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.emailDirectManager">Email Direct Manager</span></dt>
+          <dd>
+            <span>{{ disclosureRef.emailDirectManager }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.nameDirectManager">Name Direct Manager</span></dt>
+          <dd>
+            <span>{{ disclosureRef.nameDirectManager }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.jobNumberDirectManager">Job Number Direct Manager</span></dt>
+          <dd>
+            <span>{{ disclosureRef.jobNumberDirectManager }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.jobTitleDirectManager">Job Title Direct Manager</span></dt>
+          <dd>
+            <span>{{ disclosureRef.jobTitleDirectManager }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.extDirectManager">Ext Direct Manager</span></dt>
+          <dd>
+            <span>{{ disclosureRef.extDirectManager }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.areThereRelatives">Are There Relatives</span></dt>
+          <dd>
+            <span>{{ disclosureRef.areThereRelatives }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.file">File</span></dt>
+          <dd>
+            <span>{{ disclosureRef.file }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.filename">Filename</span></dt>
+          <dd>
+            <span>{{ disclosureRef.filename }}</span>
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.gift">Gift</span></dt>
+          <dd>
+            @if (disclosure()!.gift) {
+              <div>
+                <a [routerLink]="['/gift', disclosure()!.gift?.id, 'view']">{{ disclosureRef.gift?.id }}</a>
+              </div>
+            }
+          </dd>
+          <dt><span jhiTranslate="disclosureApp.disclosure.conflictInterest">Conflict Interest</span></dt>
+          <dd>
+            @if (disclosure()!.conflictInterest) {
+              <div>
+                <a [routerLink]="['/conflict-interest', disclosure()!.conflictInterest?.id, 'view']">{{
+                  disclosureRef.conflictInterest?.id
+                }}</a>
+              </div>
+            }
+          </dd>
+        </dl>
+
+        <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+          <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+        </button>
+
+        <button type="button" [routerLink]="['/disclosure', disclosureRef.id, 'edit']" class="btn btn-primary">
+          <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+        </button>
+      </div>
+    }
+  </div>
+</div>

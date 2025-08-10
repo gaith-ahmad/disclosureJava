@@ -1,0 +1,74 @@
+{
+  "annotations": {
+    "changelogDate": "20250810134400"
+  },
+  "applications": ["Disclosure"],
+  "fields": [
+    {
+      "fieldName": "giftNameOrganizationGiven",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "giftReason",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "giftOfficialOccasion",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "giftSpoilsQuickly",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "giftForPersonalUse",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "giftType",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "giftEstimatedValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "giftDateReceiving",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "giftOwnDesire",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "giftImpact",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "giftReasonAcceptanceRejection",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amountCashOffered",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "otherNotes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "formalOccasionVisit",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Gift",
+  "relationships": [],
+  "searchEngine": "no"
+}

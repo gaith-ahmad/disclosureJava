@@ -1,0 +1,29 @@
+{
+  "disclosureApp": {
+    "managerInfo": {
+      "home": {
+        "title": "Manager Infos",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Manager Info",
+        "createOrEditLabel": "Create or edit a Manager Info",
+        "notFound": "No Manager Infos found"
+      },
+      "created": "A new Manager Info is created with identifier {{ param }}",
+      "updated": "A Manager Info is updated with identifier {{ param }}",
+      "deleted": "A Manager Info is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Manager Info {{ id }}?"
+      },
+      "detail": {
+        "title": "Manager Info"
+      },
+      "id": "ID",
+      "emailDirectManager": "Email Direct Manager",
+      "nameDirectManager": "Name Direct Manager",
+      "jobNumberDirectManager": "Job Number Direct Manager",
+      "jobTitleDirectManager": "Job Title Direct Manager",
+      "extDirectManager": "Ext Direct Manager",
+      "userInfo": "User Info"
+    }
+  }
+}

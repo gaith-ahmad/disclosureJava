@@ -1,0 +1,168 @@
+<div>
+  <h2 id="page-heading" data-cy="ConflictInterestHeading">
+    <span jhiTranslate="disclosureApp.conflictInterest.home.title">Conflict Interests</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [animation]="isLoading ? 'spin' : undefined"></fa-icon>
+        <span jhiTranslate="disclosureApp.conflictInterest.home.refreshListLabel">Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-conflict-interest"
+        [routerLink]="['/conflict-interest/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="disclosureApp.conflictInterest.home.createLabel">Create a new Conflict Interest</span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error />
+
+  <jhi-alert />
+
+  @if (conflictInterests().length === 0) {
+    <div class="alert alert-warning" id="no-result">
+      <span jhiTranslate="disclosureApp.conflictInterest.home.notFound">No Conflict Interests found</span>
+    </div>
+  } @else {
+    <div class="table-responsive table-entities" id="entities">
+      <table class="table table-striped" aria-describedby="page-heading">
+        <thead>
+          <tr jhiSort [(sortState)]="sortState" (sortChange)="navigateToWithComponentValues($event)">
+            <th scope="col" jhiSortBy="id">
+              <div class="d-flex">
+                <span jhiTranslate="global.field.id">ID</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="conflictInterestClassification">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.conflictInterestClassification">Conflict Interest Classification</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="conflictInterestEntityIndividual">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.conflictInterestEntityIndividual"
+                  >Conflict Interest Entity Individual</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="conflictInterestDateArose">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.conflictInterestDateArose">Conflict Interest Date Arose</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="conflictInterestImpact">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.conflictInterestImpact">Conflict Interest Impact</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="relationshipEntityIndividual">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.relationshipEntityIndividual">Relationship Entity Individual</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="affectPermission">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.affectPermission">Affect Permission</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="caseDetails">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.caseDetails">Case Details</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="discloseInspector">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.discloseInspector">Disclose Inspector</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="facilityRegisteredInsuranceName">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.facilityRegisteredInsuranceName"
+                  >Facility Registered Insurance Name</span
+                >
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col" jhiSortBy="office">
+              <div class="d-flex">
+                <span jhiTranslate="disclosureApp.conflictInterest.office">Office</span>
+
+                <fa-icon class="p-1" icon="sort"></fa-icon>
+              </div>
+            </th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (conflictInterest of conflictInterests(); track trackId(conflictInterest)) {
+            <tr data-cy="entityTable">
+              <td>
+                <a [routerLink]="['/conflict-interest', conflictInterest.id, 'view']">{{ conflictInterest.id }}</a>
+              </td>
+              <td>{{ conflictInterest.conflictInterestClassification }}</td>
+              <td>{{ conflictInterest.conflictInterestEntityIndividual }}</td>
+              <td>{{ conflictInterest.conflictInterestDateArose }}</td>
+              <td>{{ conflictInterest.conflictInterestImpact }}</td>
+              <td>{{ conflictInterest.relationshipEntityIndividual }}</td>
+              <td>{{ conflictInterest.affectPermission }}</td>
+              <td>{{ conflictInterest.caseDetails }}</td>
+              <td>{{ conflictInterest.discloseInspector }}</td>
+              <td>{{ conflictInterest.facilityRegisteredInsuranceName }}</td>
+              <td>{{ conflictInterest.office }}</td>
+              <td class="text-end">
+                <div class="btn-group">
+                  <a
+                    [routerLink]="['/conflict-interest', conflictInterest.id, 'view']"
+                    class="btn btn-info btn-sm"
+                    data-cy="entityDetailsButton"
+                  >
+                    <fa-icon icon="eye"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                  </a>
+
+                  <a
+                    [routerLink]="['/conflict-interest', conflictInterest.id, 'edit']"
+                    class="btn btn-primary btn-sm"
+                    data-cy="entityEditButton"
+                  >
+                    <fa-icon icon="pencil-alt"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                  </a>
+
+                  <button type="submit" (click)="delete(conflictInterest)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                    <fa-icon icon="times"></fa-icon>
+                    <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

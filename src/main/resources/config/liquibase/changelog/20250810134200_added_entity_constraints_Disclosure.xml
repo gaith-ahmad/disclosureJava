@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+        Added the constraints for entity Disclosure.
+    -->
+    <changeSet id="20250810134200-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="gift_id"
+                                 baseTableName="disclosure"
+                                 constraintName="fk_disclosure__gift_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="gift"
+                                 />
+
+        <addForeignKeyConstraint baseColumnNames="conflict_interest_id"
+                                 baseTableName="disclosure"
+                                 constraintName="fk_disclosure__conflict_interest_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="conflict_interest"
+                                 />
+    </changeSet>
+</databaseChangeLog>

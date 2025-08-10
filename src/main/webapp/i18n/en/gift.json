@@ -1,0 +1,38 @@
+{
+  "disclosureApp": {
+    "gift": {
+      "home": {
+        "title": "Gifts",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Gift",
+        "createOrEditLabel": "Create or edit a Gift",
+        "notFound": "No Gifts found"
+      },
+      "created": "A new Gift is created with identifier {{ param }}",
+      "updated": "A Gift is updated with identifier {{ param }}",
+      "deleted": "A Gift is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Gift {{ id }}?"
+      },
+      "detail": {
+        "title": "Gift"
+      },
+      "id": "ID",
+      "giftNameOrganizationGiven": "Gift Name Organization Given",
+      "giftReason": "Gift Reason",
+      "giftOfficialOccasion": "Gift Official Occasion",
+      "giftSpoilsQuickly": "Gift Spoils Quickly",
+      "giftForPersonalUse": "Gift For Personal Use",
+      "giftType": "Gift Type",
+      "giftEstimatedValue": "Gift Estimated Value",
+      "giftDateReceiving": "Gift Date Receiving",
+      "giftOwnDesire": "Gift Own Desire",
+      "giftImpact": "Gift Impact",
+      "giftReasonAcceptanceRejection": "Gift Reason Acceptance Rejection",
+      "amountCashOffered": "Amount Cash Offered",
+      "otherNotes": "Other Notes",
+      "formalOccasionVisit": "Formal Occasion Visit",
+      "disclosure": "Disclosure"
+    }
+  }
+}

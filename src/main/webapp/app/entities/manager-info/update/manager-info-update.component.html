@@ -1,0 +1,150 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-manager-info-heading"
+        data-cy="ManagerInfoCreateUpdateHeading"
+        jhiTranslate="disclosureApp.managerInfo.home.createOrEditLabel"
+      >
+        Create or edit a Manager Info
+      </h2>
+
+      <div>
+        <jhi-alert-error />
+
+        @if (editForm.controls.id.value !== null) {
+          <div class="mb-3">
+            <label class="form-label" for="field_id" jhiTranslate="disclosureApp.managerInfo.id">ID</label>
+            <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+          </div>
+        }
+
+        @let emailDirectManagerRef = editForm.get('emailDirectManager')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_emailDirectManager" jhiTranslate="disclosureApp.managerInfo.emailDirectManager"
+            >Email Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="emailDirectManager"
+            id="field_emailDirectManager"
+            data-cy="emailDirectManager"
+            formControlName="emailDirectManager"
+          />
+          @if (emailDirectManagerRef.invalid && (emailDirectManagerRef.dirty || emailDirectManagerRef.touched)) {
+            <div>
+              @if (editForm.get('emailDirectManager')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let nameDirectManagerRef = editForm.get('nameDirectManager')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_nameDirectManager" jhiTranslate="disclosureApp.managerInfo.nameDirectManager"
+            >Name Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="nameDirectManager"
+            id="field_nameDirectManager"
+            data-cy="nameDirectManager"
+            formControlName="nameDirectManager"
+          />
+          @if (nameDirectManagerRef.invalid && (nameDirectManagerRef.dirty || nameDirectManagerRef.touched)) {
+            <div>
+              @if (editForm.get('nameDirectManager')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let jobNumberDirectManagerRef = editForm.get('jobNumberDirectManager')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_jobNumberDirectManager" jhiTranslate="disclosureApp.managerInfo.jobNumberDirectManager"
+            >Job Number Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="jobNumberDirectManager"
+            id="field_jobNumberDirectManager"
+            data-cy="jobNumberDirectManager"
+            formControlName="jobNumberDirectManager"
+          />
+          @if (jobNumberDirectManagerRef.invalid && (jobNumberDirectManagerRef.dirty || jobNumberDirectManagerRef.touched)) {
+            <div>
+              @if (editForm.get('jobNumberDirectManager')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let jobTitleDirectManagerRef = editForm.get('jobTitleDirectManager')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_jobTitleDirectManager" jhiTranslate="disclosureApp.managerInfo.jobTitleDirectManager"
+            >Job Title Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="jobTitleDirectManager"
+            id="field_jobTitleDirectManager"
+            data-cy="jobTitleDirectManager"
+            formControlName="jobTitleDirectManager"
+          />
+          @if (jobTitleDirectManagerRef.invalid && (jobTitleDirectManagerRef.dirty || jobTitleDirectManagerRef.touched)) {
+            <div>
+              @if (editForm.get('jobTitleDirectManager')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+
+        @let extDirectManagerRef = editForm.get('extDirectManager')!;
+        <div class="mb-3">
+          <label class="form-label" for="field_extDirectManager" jhiTranslate="disclosureApp.managerInfo.extDirectManager"
+            >Ext Direct Manager</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="extDirectManager"
+            id="field_extDirectManager"
+            data-cy="extDirectManager"
+            formControlName="extDirectManager"
+          />
+          @if (extDirectManagerRef.invalid && (extDirectManagerRef.dirty || extDirectManagerRef.touched)) {
+            <div>
+              @if (editForm.get('extDirectManager')?.errors?.required) {
+                <small class="form-text text-danger" jhiTranslate="entity.validation.required">This field is required.</small>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

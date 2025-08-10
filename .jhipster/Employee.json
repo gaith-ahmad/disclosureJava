@@ -1,0 +1,48 @@
+{
+  "annotations": {
+    "changelogDate": "20250810134300"
+  },
+  "applications": ["Disclosure"],
+  "fields": [
+    {
+      "fieldName": "displayName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "title",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "telephoneNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "localPhone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "department",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "physicalDeliveryOfficeName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "distinguishedName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "username",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Employee",
+  "relationships": [],
+  "searchEngine": "no"
+}
