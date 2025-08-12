@@ -15,34 +15,34 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name_discloser" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="name_relative" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="job_title_relative" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="relative_job_number" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="email_relative" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="relative_extension_number" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="relative_relationship" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="general_administration_relative" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="administration_relative" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="disclosure_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

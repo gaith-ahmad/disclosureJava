@@ -23,39 +23,39 @@ public class Relatives implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @NotNull
-    @Column(name = "name_discloser", nullable = false)
+   
+    @Column(name = "name_discloser")
     private String nameDiscloser;
 
-    @NotNull
-    @Column(name = "name_relative", nullable = false)
+   
+    @Column(name = "name_relative")
     private String nameRelative;
 
-    @NotNull
-    @Column(name = "job_title_relative", nullable = false)
+   
+    @Column(name = "job_title_relative")
     private String jobTitleRelative;
 
-    @NotNull
-    @Column(name = "relative_job_number", nullable = false)
+   
+    @Column(name = "relative_job_number")
     private String relativeJobNumber;
 
-    @NotNull
-    @Column(name = "email_relative", nullable = false)
+   
+    @Column(name = "email_relative")
     private String emailRelative;
 
-    @NotNull
-    @Column(name = "relative_extension_number", nullable = false)
+   
+    @Column(name = "relative_extension_number")
     private String relativeExtensionNumber;
 
     @Column(name = "relative_relationship")
     private String relativeRelationship;
 
-    @NotNull
-    @Column(name = "general_administration_relative", nullable = false)
+   
+    @Column(name = "general_administration_relative")
     private String generalAdministrationRelative;
 
-    @NotNull
-    @Column(name = "administration_relative", nullable = false)
+   
+    @Column(name = "administration_relative")
     private String administrationRelative;
 
     @ManyToOne(fetch = FetchType.LAZY)

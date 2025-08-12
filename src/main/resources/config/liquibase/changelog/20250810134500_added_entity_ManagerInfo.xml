@@ -15,19 +15,19 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="email_direct_manager" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="name_direct_manager" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="job_number_direct_manager" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="job_title_direct_manager" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="ext_direct_manager" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

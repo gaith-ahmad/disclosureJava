@@ -15,64 +15,64 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="purpose_of_disclosure" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="creation_date" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="name" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="job_title" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="job_number" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="ext" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="public_administration" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="administration" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="confirm" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="email" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="email_direct_manager" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="name_direct_manager" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="job_number_direct_manager" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="job_title_direct_manager" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="ext_direct_manager" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="are_there_relatives" type="boolean">
-                <constraints nullable="false" />
+                <constraints />
             </column>
-            <column name="file" type="varchar(255)">
-                <constraints nullable="true" />
+            <column name="file" type="LONGBLOB">
+                <constraints  />
             </column>
             <column name="filename" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="gift_id" type="bigint">
-                <constraints nullable="true" unique="true" uniqueConstraintName="ux_disclosure__gift_id" />
+                <constraints  unique="true" uniqueConstraintName="ux_disclosure__gift_id" />
             </column>
             <column name="conflict_interest_id" type="bigint">
-                <constraints nullable="true" unique="true" uniqueConstraintName="ux_disclosure__conflict_interest_id" />
+                <constraints  unique="true" uniqueConstraintName="ux_disclosure__conflict_interest_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

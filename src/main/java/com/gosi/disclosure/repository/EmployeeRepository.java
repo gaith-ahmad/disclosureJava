@@ -1,6 +1,9 @@
 package com.gosi.disclosure.repository;
 
 import com.gosi.disclosure.domain.Employee;
+
+import java.util.List;
+
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
@@ -9,4 +12,6 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {}
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+	List<Employee> findAllByUsernameContaining(String name);
+}

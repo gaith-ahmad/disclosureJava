@@ -15,43 +15,43 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="login_name" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="full_name" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="email" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="jhi_key" type="bigint">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="name" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="job_title" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="job_number" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="ext" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="public_administration" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="administration" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="relative_relationship" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="office" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="managerinfo_id" type="bigint">
-                <constraints nullable="true" unique="true" uniqueConstraintName="ux_user_info__managerinfo_id" />
+                <constraints  unique="true" uniqueConstraintName="ux_user_info__managerinfo_id" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

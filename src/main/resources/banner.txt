@@ -1,10 +1,19 @@
-
-  ${AnsiColor.GREEN}      ██╗${AnsiColor.RED} ██╗   ██╗ ████████╗ ███████╗   ██████╗ ████████╗ ████████╗ ███████╗
-  ${AnsiColor.GREEN}      ██║${AnsiColor.RED} ██║   ██║ ╚══██╔══╝ ██╔═══██╗ ██╔════╝ ╚══██╔══╝ ██╔═════╝ ██╔═══██╗
-  ${AnsiColor.GREEN}      ██║${AnsiColor.RED} ████████║    ██║    ███████╔╝ ╚█████╗     ██║    ██████╗   ███████╔╝
-  ${AnsiColor.GREEN}██╗   ██║${AnsiColor.RED} ██╔═══██║    ██║    ██╔════╝   ╚═══██╗    ██║    ██╔═══╝   ██╔══██║
-  ${AnsiColor.GREEN}╚██████╔╝${AnsiColor.RED} ██║   ██║ ████████╗ ██║       ██████╔╝    ██║    ████████╗ ██║  ╚██╗
-  ${AnsiColor.GREEN} ╚═════╝ ${AnsiColor.RED} ╚═╝   ╚═╝ ╚═══════╝ ╚═╝       ╚═════╝     ╚═╝    ╚═══════╝ ╚═╝   ╚═╝
-
-${AnsiColor.BRIGHT_BLUE}:: JHipster 🤓  :: Running Spring Boot ${spring-boot.version} :: Startup profile(s) ${spring.profiles.active} ::
-:: https://www.jhipster.tech ::${AnsiColor.DEFAULT}
+                                                
+DDDDDDDDDDDDD      IIIIIIIIII   SSSSSSSSSSSSSSS 
+D::::::::::::DDD   I::::::::I SS:::::::::::::::S
+D:::::::::::::::DD I::::::::IS:::::SSSSSS::::::S
+DDD:::::DDDDD:::::DII::::::IIS:::::S     SSSSSSS
+  D:::::D    D:::::D I::::I  S:::::S            
+  D:::::D     D:::::DI::::I  S:::::S            
+  D:::::D     D:::::DI::::I   S::::SSSS         
+  D:::::D     D:::::DI::::I    SS::::::SSSSS    
+  D:::::D     D:::::DI::::I      SSS::::::::SS  
+  D:::::D     D:::::DI::::I         SSSSSS::::S 
+  D:::::D     D:::::DI::::I              S:::::S
+  D:::::D    D:::::D I::::I              S:::::S
+DDD:::::DDDDD:::::DII::::::IISSSSSSS     S:::::S
+D:::::::::::::::DD I::::::::IS::::::SSSSSS:::::S
+D::::::::::::DDD   I::::::::IS:::::::::::::::SS 
+DDDDDDDDDDDDD      IIIIIIIIII SSSSSSSSSSSSSSS   
+                                                 
+	Powered by GOSI

@@ -15,31 +15,31 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="display_name" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="email" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="title" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="telephone_number" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="local_phone" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="department" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="physical_delivery_office_name" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="distinguished_name" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="username" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

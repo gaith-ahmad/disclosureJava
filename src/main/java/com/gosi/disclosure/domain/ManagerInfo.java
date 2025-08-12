@@ -23,24 +23,24 @@ public class ManagerInfo implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @NotNull
-    @Column(name = "email_direct_manager", nullable = false)
+   
+    @Column(name = "email_direct_manager")
     private String emailDirectManager;
 
-    @NotNull
-    @Column(name = "name_direct_manager", nullable = false)
+   
+    @Column(name = "name_direct_manager")
     private String nameDirectManager;
 
-    @NotNull
-    @Column(name = "job_number_direct_manager", nullable = false)
+   
+    @Column(name = "job_number_direct_manager")
     private String jobNumberDirectManager;
 
-    @NotNull
-    @Column(name = "job_title_direct_manager", nullable = false)
+   
+    @Column(name = "job_title_direct_manager")
     private String jobTitleDirectManager;
 
-    @NotNull
-    @Column(name = "ext_direct_manager", nullable = false)
+   
+    @Column(name = "ext_direct_manager")
     private String extDirectManager;
 
     @JsonIgnoreProperties(value = { "managerinfo" }, allowSetters = true)

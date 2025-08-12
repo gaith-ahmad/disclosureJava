@@ -70,8 +70,7 @@ public class Disclosure implements Serializable {
     @Column(name = "ext_direct_manager")
     private String extDirectManager;
 
-    @NotNull
-    @Column(name = "are_there_relatives", nullable = false)
+    @Column(name = "are_there_relatives")
     private Boolean areThereRelatives;
 
     @Column(name = "file")
@@ -81,12 +80,12 @@ public class Disclosure implements Serializable {
     private String filename;
 
     @JsonIgnoreProperties(value = { "disclosure" }, allowSetters = true)
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private Gift gift;
 
     @JsonIgnoreProperties(value = { "disclosure" }, allowSetters = true)
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private ConflictInterest conflictInterest;
 

@@ -25,8 +25,8 @@ public class Employee implements Serializable {
     @Column(name = "display_name")
     private String displayName;
 
-    @NotNull
-    @Column(name = "email", nullable = false)
+   
+    @Column(name = "email")
     private String email;
 
     @Column(name = "title")

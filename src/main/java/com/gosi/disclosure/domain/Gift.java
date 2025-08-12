@@ -29,35 +29,35 @@ public class Gift implements Serializable {
     @Column(name = "gift_reason")
     private String giftReason;
 
-    @NotNull
-    @Column(name = "gift_official_occasion", nullable = false)
+   
+    @Column(name = "gift_official_occasion")
     private String giftOfficialOccasion;
 
-    @NotNull
-    @Column(name = "gift_spoils_quickly", nullable = false)
+   
+    @Column(name = "gift_spoils_quickly")
     private String giftSpoilsQuickly;
 
-    @NotNull
-    @Column(name = "gift_for_personal_use", nullable = false)
+   
+    @Column(name = "gift_for_personal_use")
     private String giftForPersonalUse;
 
-    @NotNull
-    @Column(name = "gift_type", nullable = false)
+   
+    @Column(name = "gift_type")
     private String giftType;
 
     @Column(name = "gift_estimated_value")
     private String giftEstimatedValue;
 
-    @NotNull
-    @Column(name = "gift_date_receiving", nullable = false)
+   
+    @Column(name = "gift_date_receiving")
     private String giftDateReceiving;
 
-    @NotNull
-    @Column(name = "gift_own_desire", nullable = false)
+   
+    @Column(name = "gift_own_desire")
     private String giftOwnDesire;
 
-    @NotNull
-    @Column(name = "gift_impact", nullable = false)
+   
+    @Column(name = "gift_impact")
     private String giftImpact;
 
     @Column(name = "gift_reason_acceptance_rejection")

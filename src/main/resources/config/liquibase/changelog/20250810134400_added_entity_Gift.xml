@@ -15,46 +15,46 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="gift_name_organization_given" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="gift_reason" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="gift_official_occasion" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="gift_spoils_quickly" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="gift_for_personal_use" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="gift_type" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="gift_estimated_value" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="gift_date_receiving" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="gift_own_desire" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="gift_impact" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints />
             </column>
             <column name="gift_reason_acceptance_rejection" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="amount_cash_offered" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="other_notes" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <column name="formal_occasion_visit" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints  />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
         </createTable>

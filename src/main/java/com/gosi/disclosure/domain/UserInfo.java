@@ -23,43 +23,43 @@ public class UserInfo implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @NotNull
-    @Column(name = "login_name", nullable = false)
+   
+    @Column(name = "login_name")
     private String loginName;
 
-    @NotNull
-    @Column(name = "full_name", nullable = false)
+   
+    @Column(name = "full_name")
     private String fullName;
 
-    @NotNull
-    @Column(name = "email", nullable = false)
+   
+    @Column(name = "email")
     private String email;
 
     @Column(name = "jhi_key")
     private Long key;
 
-    @NotNull
-    @Column(name = "name", nullable = false)
+   
+    @Column(name = "name")
     private String name;
 
-    @NotNull
-    @Column(name = "job_title", nullable = false)
+   
+    @Column(name = "job_title")
     private String jobTitle;
 
-    @NotNull
-    @Column(name = "job_number", nullable = false)
+   
+    @Column(name = "job_number")
     private String jobNumber;
 
-    @NotNull
-    @Column(name = "ext", nullable = false)
+   
+    @Column(name = "ext")
     private String ext;
 
-    @NotNull
-    @Column(name = "public_administration", nullable = false)
+   
+    @Column(name = "public_administration")
     private String publicAdministration;
 
-    @NotNull
-    @Column(name = "administration", nullable = false)
+   
+    @Column(name = "administration")
     private String administration;
 
     @Column(name = "relative_relationship")
